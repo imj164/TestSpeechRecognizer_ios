@@ -93,7 +93,6 @@ final class SpeechRecognizeManager: NSObject, ObservableObject {
                 self.request = nil
                 self.task = nil
                 self.running = false
-                print("stopped: \(isFinal), \(String(describing: error))")
             }
         }
         
@@ -115,6 +114,5 @@ extension SpeechRecognizeManager: SFSpeechRecognizerDelegate {
     // 音声認識が有効・無効になった場合
     func speechRecognizer(_ speechRecognizer: SFSpeechRecognizer, availabilityDidChange available: Bool) {
         self.available = available
-        print("available: \(available)")
     }
 }
